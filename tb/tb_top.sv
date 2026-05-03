@@ -1,3 +1,9 @@
+`include "interface.sv"
+`include "driver.sv"
+`include "monitor.sv"
+`include "scoreboard.sv"
+
+
 `timescale 1ns/1ps
 
 module tb_top;
@@ -13,30 +19,35 @@ module tb_top;
     .q (vif.q)
   );
 
+  driver drv;
+  monitor mon;
+  scoreboard sb;
+  
   //Clock generation
   initial begin
     vif.clk = 0;
     forever #5 vif.clk = ~vif.clk;  //10ns clock period
   end
 
-  //Stimulus
   initial begin
-    //Initialize
-    vif.rst_n = 0;
-    vif.d = 0;
+    drv = new(vif);
+    mon = new(vif);
+    sb  = new(vif);
 
-    #10;
-    vif.rst_n = 1;
-
-    //Apply inputs
-    #10 vif.d = 1;
-    #10 vif.d = 0;
-    #10 vif.d = 1;
-    #10 vif.d = 1;
-    #10 vif.d = 0;
-
-    #20 $finish;
-
-  end
+    fork
+        drv.run();
+        mon.run();
+        sb.run();
+    join
+end
+  
+  initial begin
+    #200 $finish;
+end
+  
+  initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars(0, tb_top);
+end
 
 endmodule
