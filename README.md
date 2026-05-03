@@ -1,11 +1,11 @@
-# 📘 SystemVerilog-Based Verification of D Flip-Flop
+#  SystemVerilog-Based Verification of D Flip-Flop
 
-## 🚀 Overview
+##  Overview
 This project demonstrates the design and verification of a synchronous D Flip-Flop (D-FF) using a **class-based SystemVerilog testbench**. The goal is to build a structured verification environment similar to industry practices, including stimulus generation, monitoring, and automated checking.
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 - Design a D Flip-Flop using SystemVerilog  
 - Develop a modular verification environment  
 - Validate sequential behavior with correct clock-cycle timing  
@@ -13,37 +13,8 @@ This project demonstrates the design and verification of a synchronous D Flip-Fl
 
 ---
 
-## 🏗️ Project Structure
 
-dff-verification/
-├── README.md
-├── docs/
-│   └── waveform.png            # (optional screenshot)
-│
-├── design/
-│   └── dff.sv                  # DUT
-│
-├── tb/
-│   ├── interface/
-│   │   └── dff_if.sv
-│   │
-│   ├── components/
-│   │   ├── driver.sv
-│   │   ├── monitor.sv
-│   │   └── scoreboard.sv
-│   │
-│   └── top/
-│       └── tb_top.sv
-│
-├── sim/
-│   └── run.do                  # (optional for ModelSim)
-│
-└── waves/
-    └── dump.vcd                # (optional)
-
----
-
-## ⚙️ Methodology
+##  Methodology
 
 ### 🔹 Design
 - Implemented a **positive-edge triggered D Flip-Flop**
@@ -70,9 +41,9 @@ dff-verification/
 
 ---
 
-## 🧠 Key Learning
+##  Key Learning
 
-### ⚠️ Problem Faced
+###  Problem Faced
 Initially, the scoreboard assumed:
 
 q = d (same cycle)
@@ -80,7 +51,7 @@ q = d (same cycle)
 
 This caused multiple false errors.
 
-### ✅ Solution
+###  Solution
 Corrected the logic to:
 
 q(t) = d(t-1)
@@ -92,20 +63,20 @@ q(t) = d(t-1)
 
 ---
 
-## 📊 Simulation
+##  Simulation
 
 - Tool: **EDA Playground**
 - Language: **SystemVerilog**
 - Waveform: **EPWave**
 
-### ✔️ Results
+###  Results
 - All test cases passed  
 - No functional errors  
 - Correct 1-cycle delayed behavior verified  
 
 ---
 
-## 💡 Features
+##  Features
 
 - Class-based verification architecture  
 - Virtual interface usage  
@@ -115,7 +86,7 @@ q(t) = d(t-1)
 
 ---
 
-## 📈 Outcome
+##  Outcome
 
 - Achieved **complete functional verification**  
 - Built a **mini-UVM style environment**  
@@ -126,21 +97,15 @@ q(t) = d(t-1)
 
 ---
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 - Add **functional coverage**  
 - Implement **SystemVerilog Assertions (SVA)**  
 - Introduce **transaction-level modeling**  
 - Upgrade to **UVM-based verification**  
 
----
-
-## 👨‍💻 Author
-**Shivam Yadav**  
-M.Tech (Microelectronics & VLSI)  
-Aspiring Design Verification Engineer  
 
 ---
 
-## ⭐ Conclusion
+##  Conclusion
 This project demonstrates a strong foundation in **SystemVerilog verification concepts**, including structured testbench design, debugging, and timing-aware validation — essential for modern DV roles.
