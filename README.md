@@ -15,15 +15,31 @@ This project demonstrates the design and verification of a synchronous D Flip-Fl
 
 ## 🏗️ Project Structure
 
-
-.
-├── dff.sv # DUT (Design Under Test)
-├── interface.sv # Interface connecting DUT and TB
-├── driver.sv # Stimulus generator
-├── monitor.sv # Output observer
-├── scoreboard.sv # Output checker
-├── tb_top.sv # Top-level testbench
-
+dff-verification/
+├── README.md
+├── docs/
+│   └── waveform.png            # (optional screenshot)
+│
+├── design/
+│   └── dff.sv                  # DUT
+│
+├── tb/
+│   ├── interface/
+│   │   └── dff_if.sv
+│   │
+│   ├── components/
+│   │   ├── driver.sv
+│   │   ├── monitor.sv
+│   │   └── scoreboard.sv
+│   │
+│   └── top/
+│       └── tb_top.sv
+│
+├── sim/
+│   └── run.do                  # (optional for ModelSim)
+│
+└── waves/
+    └── dump.vcd                # (optional)
 
 ---
 
