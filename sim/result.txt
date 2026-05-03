@@ -1,0 +1,44 @@
+# run -all
+# MONITOR: d=0 q=0 rst_n=0 time=5000
+# MONITOR: d=0 q=0 rst_n=0 time=15000
+# PASS: q=0 at time=25000
+# MONITOR: d=0 q=0 rst_n=1 time=25000
+# MONITOR: d=1 q=0 rst_n=1 time=35000
+# PASS: q=0 at time=35000
+# PASS: q=1 at time=45000
+# MONITOR: d=1 q=1 rst_n=1 time=45000
+# MONITOR: d=0 q=1 rst_n=1 time=55000
+# PASS: q=1 at time=55000
+# PASS: q=0 at time=65000
+# MONITOR: d=1 q=0 rst_n=1 time=65000
+# MONITOR: d=0 q=1 rst_n=1 time=75000
+# PASS: q=1 at time=75000
+# PASS: q=0 at time=85000
+# MONITOR: d=0 q=0 rst_n=1 time=85000
+# MONITOR: d=0 q=0 rst_n=1 time=95000
+# PASS: q=0 at time=95000
+# PASS: q=0 at time=105000
+# MONITOR: d=1 q=0 rst_n=1 time=105000
+# MONITOR: d=1 q=1 rst_n=1 time=115000
+# PASS: q=1 at time=115000
+# PASS: q=1 at time=125000
+# MONITOR: d=0 q=1 rst_n=1 time=125000
+# MONITOR: d=0 q=0 rst_n=1 time=135000
+# PASS: q=0 at time=135000
+# PASS: q=0 at time=145000
+# MONITOR: d=0 q=0 rst_n=1 time=145000
+# MONITOR: d=0 q=0 rst_n=1 time=155000
+# PASS: q=0 at time=155000
+# PASS: q=0 at time=165000
+# MONITOR: d=0 q=0 rst_n=1 time=165000
+# MONITOR: d=0 q=0 rst_n=1 time=175000
+# PASS: q=0 at time=175000
+# PASS: q=0 at time=185000
+# MONITOR: d=0 q=0 rst_n=1 time=185000
+# MONITOR: d=0 q=0 rst_n=1 time=195000
+# PASS: q=0 at time=195000
+# ** Note: $finish    : testbench.sv(45)
+#    Time: 200 ns  Iteration: 0  Instance: /tb_top
+# End time: 13:47:39 on May 03,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+End time: 13:47:39 on May 03,2026, Elapsed time: 0:00:01
